@@ -4,10 +4,31 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import initialState from '../reducers/initialState';
 
+const headers = new Headers();
+headers.append("Content-Type", "application/json");
 
 class PayoutBox extends React.Component {
   constructor(props, context) {
     super(props, context);
+
+    this.state = {
+      notes: initialState.payoutBox
+    };
+  }
+
+  componentWillUpdate(props) {
+    const that = this;
+    if(this.props.notes != props.notes) {
+      fetch("http://localhost:4000/payout", {
+        method: "POST",
+        body: JSON.stringify({notes:initialState.notes, amount: props.notes}),
+        headers
+      }).then((response) => {
+        return response.json();
+      }).then((res) => {
+        that.setState({notes: res});
+      });
+    }
   }
 
   render() {
@@ -17,22 +38,22 @@ class PayoutBox extends React.Component {
           <h3>Get your money here!</h3>
 
           <hr/>
-          
+
           <h3>Notes:</h3>
           <h4>
-            1000 X {this.props.notes['1000']}
+            1000 X {this.state.notes['1000']}
           </h4>
           <h4>
-            500 X {this.props.notes['500']}
+            500 X {this.state.notes['500']}
           </h4>
           <h4>
-            200 X {this.props.notes['200']}
+            200 X {this.state.notes['200']}
           </h4>
           <h4>
-            100 X {this.props.notes['100']}
+            100 X {this.state.notes['100']}
           </h4>
           <h4>
-            50 X {this.props.notes['50']}
+            50 X {this.state.notes['50']}
           </h4>
 
           <hr/>
@@ -40,15 +61,15 @@ class PayoutBox extends React.Component {
           <h3>Coins (>20mm):</h3>
 
           <h4>
-            20 X {this.props.notes['20']}
+            20 X {this.state.notes['20']}
           </h4>
 
           <h4>
-            5 x {this.props.notes['5']}
+            5 x {this.state.notes['5']}
           </h4>
 
           <h4>
-            2 x {this.props.notes['2']}
+            2 x {this.state.notes['2']}
           </h4>
 
           <hr/>
@@ -56,11 +77,11 @@ class PayoutBox extends React.Component {
           <h3>Coins (&lt;=20mm):</h3>
 
           <h4>
-            10 X {this.props.notes['10']}
+            10 X {this.state.notes['10']}
           </h4>
 
           <h4>
-            1 X {this.props.notes['1']}
+            1 X {this.state.notes['1']}
           </h4>
 
           <RaisedButton
@@ -78,7 +99,7 @@ class PayoutBox extends React.Component {
 }
 
 PayoutBox.propTypes = {
-  notes: PropTypes.object.isRequired,
+  notes: PropTypes.string.isRequired,
   clearBox: PropTypes.func.isRequired
 };
 
