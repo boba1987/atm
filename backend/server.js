@@ -14,12 +14,16 @@ app.listen(4000, function () {
 // Add headers
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
+  res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+  res.setHeader('Access-Control-Request-Headers', 'application/json');
   next();
 });
 
 /* Routing */
 app
-  .get('/payout', function(req, res){
-    res.status(200).send('Hello');
+  .post('/payout', function(req, res){
+    const payment = execPayment.execPayment(req.body.notes, req.body.amount);
+
+    res.send(JSON.stringify(payment));
   });
