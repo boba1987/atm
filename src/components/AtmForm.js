@@ -26,10 +26,15 @@ class AtmForm extends React.Component {
     };
 
     this.onInput = this.handleInput.bind(this);
+    this.cancelPayout = this.cancelPayout.bind(this);
   }
 
   handleInput(input) {
     this.setState({ value: input });
+  }
+
+  cancelPayout() {
+    this.setState({ value: "" });
   }
 
   render() {
@@ -54,6 +59,13 @@ class AtmForm extends React.Component {
             label="Payout"
             primary={true}
             onClick={() => this.props.execPayment(this.state.value, initialState.notes)}
+          />
+          &nbsp;
+          <RaisedButton
+            key={2}
+            label="Cancel"
+            secondary={true}
+            onClick={this.cancelPayout}
           />
         </div>
       </MuiThemeProvider>
