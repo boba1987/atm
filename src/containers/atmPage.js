@@ -21,14 +21,13 @@ atmPage.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-function mapStateToProps() {
+function mapStateToProps(state) {
   return {
-
+    payout: state.atmReducer
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  console.log(actions);
   return {
     actions: bindActionCreators(actions, dispatch)
   };

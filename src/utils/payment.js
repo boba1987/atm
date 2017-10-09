@@ -1,4 +1,4 @@
-export function execPayment(notes, amount) {
+export default function execPayment(notes, amount) {
     let distribution = {};
     let note;
 
