@@ -1,9 +1,10 @@
 1. **Get started** - Type `npm start` to start development in your default browser.
-2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
-3. **One command line to check** - All feedback is displayed on a single command line.
-4. **No more JavaScript fatigue** - Slingshot uses the most popular and powerful libraries for working with React.
-5. **Working example app** - The included example app shows how this all works together.
-6. **Automated production build** - Type `npm run build` to do all this:
+2. **Start mock backend** - cd into ./backend folder and type `node server.js`, server is running on port 4000
+3. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
+4. **One command line to check** - All feedback is displayed on a single command line.
+5. **No more JavaScript fatigue** - Slingshot uses the most popular and powerful libraries for working with React.
+6. **Working example app** - The included example app shows how this all works together.
+7. **Automated production build** - Type `npm run build` to do all this:
 
 ## Initial Machine Setup
 1. **Install [Node 4.0.0 or greater](https://nodejs.org)** - (5.0 or greater is recommended for optimal build performance). Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
