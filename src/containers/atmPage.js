@@ -5,13 +5,14 @@ import {bindActionCreators} from 'redux';
 import * as actions from '../actions/atmActions';
 import AtmForm from '../components/AtmForm';
 
-export const atmPage = () => {
+export const atmPage = (props) => {
   return (
     <div>
       <h1>
         ATM
       </h1>
-      <AtmForm/>
+      <AtmForm
+        execPayment={props.actions.atmPayout}/>
     </div>
   );
 };
@@ -27,6 +28,7 @@ function mapStateToProps() {
 }
 
 function mapDispatchToProps(dispatch) {
+  console.log(actions);
   return {
     actions: bindActionCreators(actions, dispatch)
   };

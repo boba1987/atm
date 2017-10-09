@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class AtmForm extends React.Component {
   constructor(props, context) {
@@ -7,11 +10,22 @@ class AtmForm extends React.Component {
 
   render() {
     return(
-      <div>
-        hello world
-      </div>
+      <MuiThemeProvider>
+        <div>
+          <RaisedButton
+            key={1}
+            label="Payout"
+            primary={true}
+            onClick={this.props.execPayment}
+          />
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
+
+AtmForm.propTypes = {
+  execPayment: PropTypes.func.isRequired
+};
 
 export default AtmForm;
