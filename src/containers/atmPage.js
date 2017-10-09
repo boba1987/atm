@@ -4,8 +4,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/atmActions';
 import AtmForm from '../components/AtmForm';
+import PayoutBox from '../components/PayoutBox';
 
-export const atmPage = (props) => {
+export const AtmPage = (props) => {
   return (
     <div>
       <h1>
@@ -13,11 +14,14 @@ export const atmPage = (props) => {
       </h1>
       <AtmForm
         execPayment={props.actions.atmPayout}/>
+      <br/>
+      <PayoutBox
+        notes={props.payout}/>
     </div>
   );
 };
 
-atmPage.propTypes = {
+AtmPage.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
@@ -36,4 +40,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(atmPage);
+)(AtmPage);
