@@ -18,17 +18,42 @@ const numericKeyboard = [
 class AtmForm extends React.Component {
   constructor(props, context) {
     super(props, context);
+    injectTapEventPlugin();
+
+    this.state = {
+      open: true,
+      value: ''
+    };
+
+    this.onInput = this.handleInput.bind(this);
+  }
+
+  handleInput(input) {
+    this.setState({ value: input });
   }
 
   render() {
     return(
       <MuiThemeProvider>
         <div>
+          <h2>Enter amount</h2>
+          <Keyboard
+            textField={
+              <TextField
+                id="text"
+                value={this.state.value}
+              />
+            }
+            automatic
+            onInput={this.onInput}
+            layouts={[numericKeyboard]}
+            open={this.state.open}
+          />
           <RaisedButton
             key={1}
             label="Payout"
             primary={true}
-            onClick={() => this.props.execPayment('1000', initialState.notes)}
+            onClick={() => this.props.execPayment(this.state.value, initialState.notes)}
           />
         </div>
       </MuiThemeProvider>
