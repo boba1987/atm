@@ -28,20 +28,18 @@
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
-  "author": "Slobodan Djordjevic",
+  "author": "Cory House",
+  "license": "MIT",
   "dependencies": {
-    "format-number": "^2.0.2",
-    "material-ui": "0.17.4",
+    "material-ui": "0.19.4",
     "object-assign": "4.1.0",
-    "react": "15.4.2",
-    "react-dom": "15.4.1",
-    "react-redux": "5.0.1",
-    "react-router": "3.0.0",
-    "react-router-redux": "4.0.7",
-    "react-tap-event-plugin": "^2.0.1",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "react-redux": "5.0.5",
+    "react-router": "3.0.5",
+    "react-router-redux": "4.0.8",
     "redux": "3.6.0",
-    "redux-thunk": "2.1.0",
-    "underscore": "^1.8.3"
+    "redux-thunk": "2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "7.1.2",
@@ -85,7 +83,7 @@
     "redux-immutable-state-invariant": "2.0.0",
     "replace": "0.3.0",
     "rimraf": "2.6.1",
-    "sass-loader": "6.0.6",
+    "sass-loader": "6.0.2",
     "style-loader": "0.18.2",
     "url-loader": "0.5.9",
     "webpack": "3.1.0",
@@ -111,7 +109,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:boba1987/atm.git"
+    "url": "https://github.com/coryhouse/react-slingshot"
   },
   "jest": {
     "moduleNameMapper": {
