@@ -16,7 +16,8 @@ export const AtmPage = (props) => {
         execPayment={props.actions.atmPayout}/>
       <br/>
       <PayoutBox
-        notes={props.payout}/>
+        notes={props.payout}
+        clearBox={props.actions.atmPayout}/>
     </div>
   );
 };
