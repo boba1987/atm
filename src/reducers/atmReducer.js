@@ -10,7 +10,7 @@ import initialState from './initialState';
 export default function atmReducer(state = initialState.payoutBox, action) {
   switch (action.type) {
     case types.EXEC_PAYMENT: {
-      return state;
+      return execPayment(action.amount, action.notes);
     }
 
     default:
