@@ -1,10 +1,8 @@
 import * as types from '../constants/atmActionTypes';
 
 // example of a thunk using the redux-thunk middleware
-export function atmPayout(notes, ammount) {
+export function atmPayout() {
   return {
-    type: types.EXEC_PAYMENT,
-    ammount,
-    notes
+    type: types.EXEC_PAYMENT
   };
 }
