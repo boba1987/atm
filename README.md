@@ -1,3 +1,6 @@
+# Implementation Javascript of https://en.wikipedia.org/wiki/Greedy_algorithm
+## For implementation details check https://github.com/boba1987/greedy_atm/blob/master/src/utils/payment.js
+
 1. **Get started** - Type `npm start` to start development in your default browser.
 2. **Start mock backend** - cd into ./backend folder and type `node server.js`, server is running on port 4000
 3. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
