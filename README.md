@@ -1,4 +1,4 @@
-# Implementation Javascript of https://en.wikipedia.org/wiki/Greedy_algorithm
+# Javascript implementation of https://en.wikipedia.org/wiki/Greedy_algorithm
 ## For implementation details check https://github.com/boba1987/greedy_atm/blob/master/src/utils/payment.js
 
 1. **Get started** - Type `npm start` to start development in your default browser.
